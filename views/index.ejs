@@ -1,0 +1,227 @@
+
+<!-- service section -->
+<section class="service_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center ">
+      <h2 class="">
+        <%= pageData.service.title %>
+      </h2>
+      <p class="col-lg-8 px-0">
+        <%= pageData.service.description %>
+      </p>
+    </div>
+    <div class="service_container">
+     
+      <div class="carousel-wrap ">
+        
+        <div class="service_owl-carousel owl-carousel">
+          <% pageData.service.services.forEach((service, index) => { %>
+          <div class="item">
+            <div class="box ">
+              <div class="img-box">
+                <img src="<%= service.images %>" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  <%= service.title %>
+                </h5>
+                <p>
+                  <%= service.description %>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+        
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="btn-box">
+      <a href="<%= pageData.service.link %>">
+        <%= pageData.service.button %>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- service section ends -->
+
+<!-- about section -->
+<section class="about_section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-5 offset-md-1">
+        <div class="detail-box pr-md-2">
+          <div class="heading_container">
+            <h2 class="">
+              <%= pageData.about.title %>
+            </h2>
+          </div>
+          <p class="detail_p_mt">
+            <%= pageData.about.description %>
+          </p>
+          <a href="<%= pageData.about.link %>" class="">
+            <%= pageData.about.button %>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 px-0">
+        <div class="img-box ">
+          <img src="<%= pageData.about.image %>" class="box_img" alt="about img">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- about section ends -->
+
+<!-- team section -->
+<section class="team_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        <%= pageData.team.title %>
+      </h2>
+      <p>
+       <%= pageData.team.description %>
+      </p>
+    </div>
+    <div class="row">
+      <% pageData.team.teamMembers.forEach((team, index) => { %>
+      <div class="col-md-4 col-sm-6 mx-auto">
+        <div class="box">
+          <div class="img-box">
+            <img src="<%= team.images %>" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              <%= team.name %>
+            </h5>
+            <h6 class="">
+              <%= team.designation %>
+            </h6>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+    </div>
+  </div>
+</section>
+<!-- end team section -->
+
+<!-- contact section -->
+<section class="contact_section ">
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-6 px-0">
+        <div class="img-box ">
+          <img src="<%= pageData.contact.image %>" class="box_img" alt="about img">
+        </div>
+      </div>
+      <div class="col-md-5 mx-auto">
+        <div class="form_container">
+          <div class="heading_container heading_center">
+            <h2> <%= pageData.contact.title %> </h2>
+          </div>
+          <form action="/api/contact" method="POST">            
+
+            <div class="form-row">
+              <div class="form-group col">
+                <input type="text" class="form-control" name="name" placeholder="Your Name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-lg-6">
+                <input type="text" class="form-control" name="phone" placeholder="Phone Number" />
+              </div>
+              <div class="form-group col-lg-6">
+                <select name="service" id="" class="form-control wide">
+                  <option value="">Select Service</option>
+                  <option value="web-design">Web Design</option>
+                  <option value="web-development">Web Development</option>
+                  <option value="ecommerce">E-commerce</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <input type="email" class="form-control" name="email" placeholder="Email" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col">
+                <input type="text" class="message-box form-control" name="message" placeholder="Message" />
+              </div>
+            </div>
+
+            <div class="g-recaptcha" data-sitekey="6Lfl9SYqAAAAAJV2FXe_kK3x-PUa-lakbyJnwVZj"></div><br/><br/>
+
+            <div class="btn_box">
+              <button>
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end contact section -->
+
+<!-- client section -->
+<section class="client_section layout_padding">
+  <div class="container ">
+    <div class="heading_container heading_center">
+      <h2>
+        <%= pageData.testimonial.title %>
+      </h2>
+      <hr>
+    </div>
+    <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% pageData.testimonial.reviews.forEach((review, index) => { %>
+        <div class="<%= index === 0 ? 'carousel-item active' : 'carousel-item' %>">
+          <div class="row">
+            <div class="col-lg-7 col-md-9 mx-auto">
+              <div class="client_container ">
+                <div class="img-box">
+                  <img src="<%= review.image %>" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    <%= review.name %>
+                  </h5>
+                  <p>
+                  <%= review.feedback %>
+                  </p>
+                  <span>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+      <div class="carousel_btn-box">
+        <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+          <span>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+          <span>
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end client section -->

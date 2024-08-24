@@ -1,0 +1,53 @@
+
+  <!-- service section -->
+
+  
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center ">
+        <h2 class="">
+          <%= pageData.service.title %>
+        </h2>
+        <p class="col-lg-8 px-0">
+          <%= pageData.service.description %>
+        </p>
+      </div>
+      <div class="service_container">
+       
+        <div class="carousel-wrap ">
+          
+          <div class="service_owl-carousel owl-carousel">
+            <% pageData.service.services.forEach((service, index) => { %>
+            <div class="item">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="<%= service.images %>" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    <%= service.title %>
+                  </h5>
+                  <p>
+                    <%= service.description %>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <% }); %>
+          
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="btn-box">
+        <a href="<%= pageData.service.link %>">
+          <%= pageData.service.button %>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- service section ends -->
+
+ 

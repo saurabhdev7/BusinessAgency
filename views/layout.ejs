@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="<%= pageData.favicon %>" type="image/x-icon">
+  <title><%= pageData.title %></title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+
+    <%- include('partials/header.ejs') %>    
+
+    <% if (pageData.showBanner) { %> 
+            <!-- slider section -->    
+    <section class="slider_section ">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner"> 
+  
+              <% pageData.banners.forEach((banner, index) => { %>
+                  <div class="<%= index === 0 ? 'carousel-item active' : 'carousel-item' %>">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-10 col-md-11 mx-auto">
+                            <div class="detail-box">
+                              <h1>
+                                <%= banner.title %>
+                              </h1>
+                              <p>
+                                  <%= banner.description %>
+                              </p>
+                              <div class="btn-box">
+                                <a href="<%= banner.link %>" class="btn1">
+                                  <%= banner.button %>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              <% }); %>
+  
+  
+          </div>
+          <div class="carousel_btn-box">
+            <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- end slider section -->
+    <% } %>  
+
+
+  </div>
+
+  <%- body %>
+
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <div class="info_top">
+        <div class="row">
+          <div class="col-md-3 ">
+            <a class="navbar-brand" href="/">
+              <%= pageData.name %>
+            </a>
+          </div>
+          <div class="col-md-5 ">
+            <div class="info_contact">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  <%= pageData.location %>
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  <%= pageData.phone %>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="social_box">
+              <a href="<%= pageData.facebook %>">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="<%= pageData.twitter %>">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="<%= pageData.linkedin %>">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="<%= pageData.instagram %>">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info_bottom">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="info_detail">
+              <h5>
+                <%= pageData.name %>
+              </h5>
+              <p>
+                <%= pageData.description %>
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-6">
+            <div class="info_detail">
+              <h5>
+                <%= pageData.service.title %>
+              </h5>
+              <p>
+                <%= pageData.service.description %>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="">
+              <h5>
+                Useful links
+              </h5>
+              <ul class="info_menu">
+                <li>
+                  <a href="/">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="/about">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="/service">
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a href="/team">
+                    Team
+                  </a>
+                </li>
+                <li class="mb-0">
+                  <a href="/contact">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <%- include('partials/footer.ejs') %>
+  
+
+  
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+</body>
+
+</html>

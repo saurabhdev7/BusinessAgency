@@ -1,0 +1,135 @@
+{
+    "global" : {
+        "name" : "Ezecloud",
+        "favicon": "images/fevicon.png",
+        "email": "demo@gmail.com",
+        "phone": "+91 7980571601",
+        "location": "Kolkata",
+        "facebook":"https://www.facebook.com",
+        "twitter":"https://x.com/",
+        "linkedin": "https://in.linkedin.com/",
+        "instagram": "https://www.instagram.com/",
+
+
+        "banners": [
+            {
+                "title": "Web Design",
+                "description": "We design websites that are user-friendly and easy to navigate.",
+                "button": "Read More",
+                "link": "/service"
+            },
+            {
+                "title": "Web Development",
+                "description": "We develop websites that are mobile-friendly and responsive.",
+                "button": "Read More",
+                "link": "/service"                
+            },
+            {
+                "title": "E-commerce",
+                "description": "We design and develop e-commerce websites that are user-friendly and easy to navigate.",
+                "button": "Read More",
+                "link": "/service"
+            }
+        ]     
+    },
+    "home" : {
+        "title" : "Welcome to Ezzecloud Portfolio",
+        "description" : "We are a team of talented designers making websites with Bootstrap, React, Wordpress and more.",
+        "showBanner": true,
+        "service": {           
+            "title": "Our Services", 
+            "description": "We provide talented design making websites with Bootstrap, React, Wordpress ",     
+            "services": [
+                {
+                    "title": "Web Design",
+                    "description": "We design websites that are user-friendly and easy to navigate.",               
+                    "images": "images/s1.png"               
+                },
+                {
+                    "title": "Web Development",
+                    "description": "We develop websites that are mobile-friendly and responsive.",
+                    "images": "images/s2.png"
+                },
+                {
+                    "title": "E-commerce",
+                    "description": "We design and develop e-commerce websites that are user-friendly and easy to navigate.",
+                    "images": "images/s3.png" 
+                },
+                {
+                    "title": "Shopify",
+                    "description": "We design and develop e-commerce websites that are user-friendly and easy to navigate.",
+                    "images": "images/s4.png" 
+                },
+                {
+                    "title": "Wordpress",
+                    "description": "We design and develop e-commerce websites that are user-friendly and easy to navigate.",
+                    "images": "images/s5.png" 
+                }
+            ],
+            "button": "Read More",
+            "link": "/service"
+
+        },
+
+        
+        "about": {
+            "title": "About Me",
+            "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.",
+            "image": "images/about-img.jpg",
+            "button": "Read More",
+            "link": "/about"
+        },
+        "team": {
+            "title": "Our Team",
+            "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, orThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.",
+            "teamMembers": [
+                {
+                    "name": "Subhajit Chatterjee",
+                    "designation": "Web Designer",
+                    "images": "images/t1.jpg"
+                },
+                {
+                    "name": "Bipin Tripathi",
+                    "designation": "Web Developer",
+                    "images": "images/t2.jpg"
+                },
+                {
+                    "name": "Saurabh Dubey",
+                    "designation": "Web Developer",
+                    "images": "images/t3.jpg"
+                }
+            ]
+        },
+        "contact": {
+            "title": "Contact Us",
+            "image": "images/contact-img.jpg"
+        },
+        
+        "testimonial": {
+            "title": "Customer feedback",
+            "reviews" : [
+                {
+                    "image": "images/c-2.png",
+                    "name": "Bubu",
+                    "feedback": "We love our new website! Ezecloud created a design that’s both attractive and easy to use. Our visitors have noticed the difference. Thanks for a job well done!"
+                },
+                {
+                    "image": "images/c-1.png",
+                    "name": "Bipin",
+                    "feedback": "Great experience with Ezecloud. The website is fast, sleek, and exactly what we needed. Their support has been fantastic. Would definitely work with them again!"
+                },
+                {
+                    "image": "images/c-3.png",
+                    "name": "Subhajit",
+                    "feedback": "The team at Ezecloud transformed our ideas into a beautiful, functional website. Their design and development skills are top-notch. Highly recommended!"
+                }
+            ]
+        },
+        "copyRight" :{
+            "title" : "All Rights Reserved",
+            "developedBy": "EezeeCloud",
+            "link" : "/"
+
+        }
+    }
+}
